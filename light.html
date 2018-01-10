@@ -8,11 +8,22 @@
 </head>
 <body>
   <img id="image" src="image/on.png" alt="on">
-  <div id="timer">5</div>
-  <button onclick="togglelight();">
+  <div class="timer-container">
+    <div id="timer">?</div>
+    <form class="form-timer">
+      <input type="text" id="time">
+      <input type="button" value="設定倒數時間" onclick="setTimer();">
+    </form>
+  </div>
+  <button onclick="toggleLight();">
     ON <br>
     - <br>
     OFF
   </button>
 </body>
 </html>
+
+<!-- 你會有一個輸入欄位
+你需要判斷輸入的是否是數字
+你需要一個轉換字串成數字的功能
+你需要一個驅動設定倒數計時時間的按鈕 -->
