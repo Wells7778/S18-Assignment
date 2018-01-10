@@ -11,9 +11,12 @@ function setTimer() {
   var time = document.getElementById('time').value;
   if (isNaN(time)) {
     alert('請輸入數字');
+  }else if (time == ""){
+    alert('尚未輸入倒數時間');
   }else {
     timeleft = time;
     setting = setInterval(countDownTimer, 1000);
+    document.getElementById('timer').innerHTML = timeleft;
     document.getElementById('time').value = "";
   }
 }
@@ -21,7 +24,6 @@ function setTimer() {
 function countDownTimer(){
   var img = document.getElementById('image');
   timeleft -= 1 ;
-  console.log(timeleft);
   if (timeleft <= 0) {
     img.src = 'image/off.png';
     clearInterval(setting);
