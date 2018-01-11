@@ -5,7 +5,7 @@ function createToDo() {
   var removeButton = document.createElement("button");
   var input = document.getElementById('input').value;
   if ( input == "" ) {
-    input = "XXX";
+    input = "根本亂來";
   }
   span.innerHTML = input;
   todo.appendChild(span);
