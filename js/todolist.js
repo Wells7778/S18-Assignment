@@ -1,15 +1,15 @@
 function createToDo() {
   var todo = document.createElement("div");
   var span = document.createElement("span");
-  var replace = document.createElement("button");
-  var remove = document.createElement("button");
+  var replaceButton = document.createElement("button");
+  var removeButton = document.createElement("button");
   var input = document.getElementById('input').value;
   if ( input == "" ) {
     input = "XXX";
   }
   span.innerHTML = input;
   todo.appendChild(span);
-  replace.onclick = function() {
+  replaceButton.onclick = function() {
     var input = document.getElementById('input').value;
     if ( input == "" ) {
       alert("no input");
@@ -18,13 +18,16 @@ function createToDo() {
     this.parentNode.firstChild.innerHTML = input;
     document.getElementById('input').value = "";
   }
-  replace.textContent = "R";
-  todo.appendChild(replace);
-  remove.onclick = function () {
-    this.parentNode.parentNode.removeChild(this.parentNode);
+  replaceButton.textContent = "R";
+  todo.appendChild(replaceButton);
+  removeButton.onclick = function () {
+    var answer = confirm('確定刪除');
+    if (answer == true) {
+      this.parentNode.parentNode.removeChild(this.parentNode);
+    }
   }
-  remove.textContent = "V";
-  todo.appendChild(remove);
+  removeButton.textContent = "V";
+  todo.appendChild(removeButton);
   document.getElementById('todolist').appendChild(todo);
   document.getElementById('input').value = "";
 }
