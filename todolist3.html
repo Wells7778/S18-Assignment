@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My TodoList</title>
+  <script type="text/javascript" src="js/todolist3.js"></script>
+  <link rel="stylesheet" href="css/todolist.css">
+</head>
+<body>
+  <div class="container">
+    <form>
+      <input type="text" id="input">
+      <input type="button" value="+" onclick="createToDo()">
+      <input type="radio" id="urgent" value="urgent" name="level" Checked="true">
+      <label for="urgent">緊急</label>
+      <input type="radio" id="not-urgent" value="not-urgent" name="level">
+      <label for="not-urgent">非緊急</label>
+    </form>
+    <div id="todolist"></div>
+  </div>
+</body>
+</html>
